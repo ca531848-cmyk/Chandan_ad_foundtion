@@ -5,6 +5,65 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AD Foundation Study Classes</title>  
 <style>
+    /* APPLY FORM */
+.apply-section{
+    padding:60px 20px;
+    background:#f5f9ff;
+    text-align:center;
+}
+
+.apply-section h2{
+    color:#003f88;
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.apply-section p{
+    color:#666;
+    margin-bottom:25px;
+}
+
+.apply-form{
+    max-width:600px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.12);
+    text-align:left;
+}
+
+.apply-form input,
+.apply-form select,
+.apply-form textarea{
+    width:100%;
+    padding:13px;
+    margin-bottom:15px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    font-size:15px;
+}
+
+.apply-form textarea{
+    height:100px;
+    resize:none;
+}
+
+.apply-btn{
+    width:100%;
+    padding:14px;
+    border:0;
+    border-radius:8px;
+    background:#003f88;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.apply-btn:hover{
+    background:#002d62;
+}
 
 *{
 margin:0;
@@ -192,6 +251,59 @@ font-size:18pxll;
 </style>
 </head>
 <body>
+    <!-- APPLY FORM -->
+<section class="apply-section" id="apply">
+    <h2>Apply Now</h2>
+    <p>Fill the form to apply for our courses</p>
+
+    <form class="apply-form" onsubmit="sendWhatsApp(); return false;">
+
+        <input type="text" id="name" placeholder="Student Name" required>
+
+        <input type="tel" id="phone" placeholder="Mobile Number" required>
+
+        <input type="email" id="email" placeholder="Email Address">
+
+        <select id="course" required>
+            <option value="">Select Course</option>
+            <option>Computer Course</option>
+            <option>English Speaking</option>
+            <option>Study Classes</option>
+            <option>Other</option>
+        </select>
+
+        <textarea id="address" placeholder="Address" required></textarea>
+
+        <button type="submit" class="apply-btn">
+            Apply Now on WhatsApp
+        </button>
+
+    </form>
+</section>
+
+<script>
+function sendWhatsApp(){
+
+    var name = document.getElementById("name").value;
+    var phone = document.getElementById("phone").value;
+    var email = document.getElementById("email").value;
+    var course = document.getElementById("course").value;
+    var address = document.getElementById("address").value;
+
+    var message =
+        "📚 AD Foundation - New Application%0A%0A" +
+        "👤 Student Name: " + name + "%0A" +
+        "📱 Mobile: " + phone + "%0A" +
+        "📧 Email: " + email + "%0A" +
+        "🎓 Course: " + course + "%0A" +
+        "🏠 Address: " + address;
+
+    window.open(
+        "https://wa.me/919315957454?text=" + message,
+        "_blank"
+    );
+}
+</script>
 
 <nav>
 
