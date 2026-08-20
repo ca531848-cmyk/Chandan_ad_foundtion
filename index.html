@@ -8,614 +8,1363 @@
 
 <style>
 
+/* =========================
+   GLOBAL
+========================= */
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-scroll-behavior:smooth;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+    scroll-behavior:smooth;
 }
 
 body{
-background:#f8fbff;
-color:#333;
+    background:#f8fbff;
+    color:#333;
 }
 
-/* NAVIGATION */
+/* =========================
+   NAVIGATION
+========================= */
 
 nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 8%;
-background:#003f88;
-position:sticky;
-top:0;
-z-index:1000;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 6%;
+    background:#003f88;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 15px rgba(0,0,0,.2);
 }
 
 .logo{
-display:flex;
-align-items:center;
-gap:10px;
+    display:flex;
+    align-items:center;
+    gap:10px;
 }
 
 .logo img{
-width:70px;
-height:70px;
-border-radius:50%;
-object-fit:cover;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    object-fit:cover;
 }
 
 nav h2{
-color:white;
+    color:white;
+    font-size:22px;
 }
 
 nav a{
-color:white;
-text-decoration:none;
-margin-left:20px;
-font-weight:bold;
+    color:white;
+    text-decoration:none;
+    margin-left:18px;
+    font-weight:bold;
+    transition:.3s;
 }
 
-/* HERO */
+nav a:hover{
+    color:#00c6ff;
+}
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
-height:90vh;
-background:
-linear-gradient(rgba(0,45,98,.75),rgba(0,45,98,.75)),
-url("1000004678.jpg");
+    min-height:90vh;
 
-background-size:cover;
-background-position:center;
+    background:
+    linear-gradient(
+        rgba(0,45,98,.75),
+        rgba(0,45,98,.75)
+    ),
+    url("1000004678.jpg");
 
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-color:white;
-padding:20px;
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+    color:white;
+    padding:20px;
 }
 
 .hero h1{
-font-size:60px;
+    font-size:60px;
 }
 
 .hero p{
-font-size:22px;
-margin:20px 0;
+    font-size:22px;
+    margin:20px 0;
 }
 
 .btn{
-display:inline-block;
-padding:15px 35px;
-background:#00a8ff;
-color:white;
-text-decoration:none;
-border-radius:50px;
-font-weight:bold;
+    display:inline-block;
+    padding:15px 35px;
+    background:#00a8ff;
+    color:white;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:bold;
+    transition:.3s;
 }
 
-/* SECTIONS */
+.btn:hover{
+    background:#008ed6;
+    transform:scale(1.05);
+}
+
+/* =========================
+   SECTIONS
+========================= */
 
 section{
-padding:80px 10%;
+    padding:80px 10%;
 }
 
 .title{
-text-align:center;
-font-size:38px;
-color:#003f88;
-margin-bottom:40px;
+    text-align:center;
+    font-size:38px;
+    color:#003f88;
+    margin-bottom:40px;
 }
 
-/* ABOUT */
+/* =========================
+   VIDEO
+========================= */
+
+.video-box{
+    max-width:900px;
+    margin:auto;
+}
+
+.video-box video{
+    width:100%;
+    max-height:500px;
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+/* =========================
+   ABOUT
+========================= */
 
 .about{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
-align-items:center;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
 }
 
 .about img{
-width:100%;
-height:400px;
-object-fit:cover;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,.2);
+    width:100%;
+    height:400px;
+    object-fit:cover;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
 }
 
-/* CARDS */
+.about-text{
+    font-size:17px;
+    line-height:1.8;
+}
+
+/* =========================
+   CARDS
+========================= */
 
 .cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
+
+    gap:25px;
 }
 
 .card{
-background:white;
-padding:25px;
-border-radius:15px;
-text-align:center;
-box-shadow:0 10px 20px rgba(0,0,0,.1);
-transition:.3s;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+
+    box-shadow:
+    0 10px 20px rgba(0,0,0,.1);
+
+    transition:.3s;
 }
 
 .card:hover{
-transform:translateY(-10px);
+    transform:translateY(-10px);
+    box-shadow:
+    0 15px 30px rgba(0,0,0,.18);
+}
+
+.card h3{
+    color:#003f88;
 }
 
 .card img{
-width:100%;
-height:180px;
-object-fit:cover;
-border-radius:10px;
-margin:15px 0;
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:10px;
+    margin:15px 0;
 }
 
-/* GALLERY */
+.card p{
+    line-height:1.6;
+}
+
+/* =========================
+   ACTIVITIES
+========================= */
+
+.activity-card{
+    padding:35px 20px;
+}
+
+.activity-icon{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+/* =========================
+   MEMORY SECTION
+========================= */
+
+.memory-section{
+    background:
+    linear-gradient(
+        135deg,
+        #eef6ff,
+        #ffffff
+    );
+}
+
+.memory-card{
+    max-width:900px;
+    margin:auto;
+    padding:45px 35px;
+
+    background:white;
+
+    border-radius:22px;
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,.12);
+
+    border-top:5px solid #003f88;
+}
+
+.memory-icon{
+    text-align:center;
+    font-size:50px;
+    margin-bottom:10px;
+}
+
+.memory-card h2{
+    text-align:center;
+    color:#003f88;
+    font-size:36px;
+    margin-bottom:30px;
+}
+
+.story{
+    font-size:18px;
+    line-height:1.9;
+    color:#444;
+}
+
+.story p{
+    margin-bottom:20px;
+}
+
+.memory-quote{
+    text-align:center;
+    margin-top:25px;
+    padding:20px;
+
+    background:#f1f7ff;
+    border-radius:12px;
+
+    color:#003f88;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.memory-btn{
+    border:none;
+    padding:13px 22px;
+    border-radius:10px;
+    font-size:16px;
+    cursor:pointer;
+    background:#003f88;
+    color:white;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.memory-btn:hover{
+    background:#00a8ff;
+    transform:translateY(-2px);
+}
+
+/* =========================
+   GALLERY
+========================= */
 
 .gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:20px;
 }
 
 .gallery img{
-width:100%;
-height:220px;
-object-fit:cover;
-border-radius:15px;
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:15px;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.12);
+
+    transition:.3s;
 }
 
-/* CONTACT */
+.gallery img:hover{
+    transform:scale(1.03);
+}
+
+/* =========================
+   CONTACT
+========================= */
 
 .contact{
-background:#003f88;
-color:white;
-text-align:center;
-padding:70px 20px;
+    background:#003f88;
+    color:white;
+    text-align:center;
+    padding:70px 20px;
 }
 
-/* APPLY FORM */
+.contact h2{
+    font-size:38px;
+}
+
+.contact p{
+    margin:10px 0;
+}
+
+/* =========================
+   APPLY FORM
+========================= */
 
 .apply-section{
-padding:60px 20px;
-background:#f5f9ff;
-text-align:center;
+    padding:60px 20px;
+    background:#f5f9ff;
+    text-align:center;
 }
 
 .apply-section h2{
-color:#003f88;
-font-size:32px;
-margin-bottom:10px;
+    color:#003f88;
+    font-size:32px;
+    margin-bottom:10px;
 }
 
 .apply-section p{
-color:#666;
-margin-bottom:25px;
+    color:#666;
+    margin-bottom:25px;
 }
 
 .apply-form{
-max-width:600px;
-margin:auto;
-background:white;
-padding:30px;
-border-radius:15px;
-box-shadow:0 5px 20px rgba(0,0,0,.12);
-text-align:left;
+    max-width:600px;
+    margin:auto;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:15px;
+
+    box-shadow:
+    0 5px 20px rgba(0,0,0,.12);
+
+    text-align:left;
 }
 
 .apply-form input,
 .apply-form select,
 .apply-form textarea{
-width:100%;
-padding:13px;
-margin-bottom:15px;
-border:1px solid #ddd;
-border-radius:8px;
-font-size:15px;
+    width:100%;
+    padding:13px;
+    margin-bottom:15px;
+
+    border:1px solid #ddd;
+    border-radius:8px;
+
+    font-size:15px;
 }
 
 .apply-form textarea{
-height:100px;
-resize:none;
+    height:100px;
+    resize:none;
 }
 
 .apply-btn{
-width:100%;
-padding:14px;
-border:0;
-border-radius:8px;
-background:#003f88;
-color:white;
-font-size:17px;
-font-weight:bold;
-cursor:pointer;
+    width:100%;
+    padding:14px;
+
+    border:0;
+    border-radius:8px;
+
+    background:#003f88;
+    color:white;
+
+    font-size:17px;
+    font-weight:bold;
+
+    cursor:pointer;
+    transition:.3s;
 }
 
-/* FOOTER */
+.apply-btn:hover{
+    background:#00a8ff;
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-background:#001d3d;
-color:white;
-text-align:center;
-padding:20px;
+    background:#001d3d;
+    color:white;
+    text-align:center;
+    padding:20px;
 }
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:768px){
 
-nav{
-flex-direction:column;
-}
+    nav{
+        flex-direction:column;
+        padding:12px 15px;
+    }
 
-nav div{
-margin-top:15px;
-}
+    nav div{
+        margin-top:12px;
+        text-align:center;
+    }
 
-nav a{
-display:inline-block;
-margin:5px;
-}
+    nav a{
+        display:inline-block;
+        margin:5px 4px;
+        font-size:13px;
+    }
 
-.about{
-grid-template-columns:1fr;
-}
+    .logo img{
+        width:55px;
+        height:55px;
+    }
 
-.hero h1{
-font-size:38px;
-}
+    nav h2{
+        font-size:19px;
+    }
 
-.hero p{
-font-size:18px;
-}
+    .hero{
+        min-height:80vh;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    section{
+        padding:60px 6%;
+    }
+
+    .title{
+        font-size:30px;
+    }
+
+    .about{
+        grid-template-columns:1fr;
+    }
+
+    .about img{
+        height:300px;
+    }
+
+    .memory-card{
+        padding:30px 20px;
+    }
+
+    .memory-card h2{
+        font-size:28px;
+    }
+
+    .story{
+        font-size:16px;
+    }
 
 }
 
 </style>
 </head>
 
+
 <body>
 
-<!-- NAVIGATION -->
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
 
 <nav>
 
-<div class="logo">
+    <div class="logo">
 
-<img src="logo.png" alt="AD Foundation Logo">
+        <img
+        src="logo.png"
+        alt="AD Foundation Logo">
 
-<h2>AD Foundation</h2>
+        <h2>AD Foundation</h2>
 
-</div>
+    </div>
 
-<div>
 
-<a href="#">Home</a>
-<a href="#about">About</a>
-<a href="#courses">Courses</a>
-<a href="#activities">Activities</a>
-<a href="#gallery">Gallery</a>
-<a href="#contact">Contact</a>
+    <div>
 
-</div>
+        <a href="#home">Home</a>
+
+        <a href="#about">About</a>
+
+        <a href="#courses">Courses</a>
+
+        <a href="#activities">Activities</a>
+
+        <a href="#memory">In Memory</a>
+
+        <a href="#gallery">Gallery</a>
+
+        <a href="#contact">Contact</a>
+
+        <a href="#apply">Apply</a>
+
+    </div>
 
 </nav>
 
 
-<!-- HERO -->
 
-<section class="hero">
+<!-- =====================================================
+     HERO
+===================================================== -->
 
-<div>
+<section class="hero" id="home">
 
-<h1>AD Foundation Study Classes</h1>
+    <div>
 
-<p>Learn • Grow • Succeed</p>
+        <h1>
+            AD Foundation Study Classes
+        </h1>
 
-<a href="#courses" class="btn">Join Free Classes</a>
+        <p>
+            Learn • Grow • Succeed
+        </p>
 
-</div>
+        <a
+        href="#courses"
+        class="btn">
 
-</section>
+            Join Free Classes
 
-
-<!-- VIDEO -->
-
-<section id="video" style="text-align:center;">
-
-<h2 class="title">Our Video</h2>
-
-<video width="100%" controls autoplay muted loop>
-
-<source src="intro.mp4" type="video/mp4">
-
-Your browser does not support video.
-
-</video>
-
-</section>
-
-
-<!-- ABOUT US -->
-
-<section id="about">
-
-<h2 class="title">About Us</h2>
-
-<div class="about">
-
-<!-- FOUNDER PHOTO -->
-
-<img src="founder.png" alt="Mrs. Rakhi Luthra - Founder">
-
-<div>
-
-<h3>Free Education NGO</h3>
-
-<br>
-
-<p>
-AD Foundation Study Classes is a free educational NGO
-dedicated to helping children and youth achieve academic success.
-We provide quality education, computer skills, English communication,
-AI learning and personality development.
-</p>
-
-<br>
-
-<p><b>Founder:</b> Mrs. Rakhi Luthra</p>
-
-<p><b>Address:</b> Sector 92, Block A-17</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- COURSES -->
-
-<section id="courses">
-
-<h2 class="title">Our Free Courses</h2>
-
-<div class="cards">
-
-<div class="card">
-
-<h3>💻 Computer</h3>
-
-<img src="Computer.png" alt="Computer Class">
-
-<p>Basic Computer, MS Office & Internet</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>📐 Mathematics</h3>
-
-<img src="Mathematics.png" alt="Mathematics Class">
-
-<p>Basic to Advanced Mathematics</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>🔬 Science</h3>
-
-<img src="Science.png" alt="Science Class">
-
-<p>Physics, Chemistry & Biology</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>🇬🇧 English</h3>
-
-<img src="English.png" alt="English Class">
-
-<p>Grammar, Speaking & Communication Skills</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>🎨 Graphic Design</h3>
-
-<img src="Graphic Design.png" alt="Graphic Design Class">
-
-<p>Canva, Photoshop & Creative Designing</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>🤖 Artificial Intelligence</h3>
-
-<img src="Artificial Intelligence.png" alt="AI Class">
-
-<p>AI Basics, ChatGPT & Future Technologies</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ACTIVITIES -->
-
-<section id="activities">
-
-<h2 class="title">Our Activities</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>🎂 Birthday Celebrations</h3>
-</div>
-
-<div class="card">
-<h3>🎬 Educational Movies</h3>
-</div>
-
-<div class="card">
-<h3>🏆 Student Competitions</h3>
-</div>
-
-<div class="card">
-<h3>🎉 Cultural Programs</h3>
-</div>
-
-<div class="card">
-<h3>📚 Knowledge Sessions</h3>
-</div>
-
-<div class="card">
-<h3>💡 Skill Development Workshops</h3>
-</div>
-
-</div>
-
-</section>
-
-
-<!-- GALLERY -->
-<section id="gallery">
-
-    <h2 class="title">Gallery</h2>
-
-    <div class="gallery">
-
-        <img src="photo1.png" alt="Gallery Photo 1">
-
-        <img src="photo2.png" alt="Gallery Photo 2">
-
-        <img src="photo3.png" alt="Gallery Photo 3">
-
-        <img src="photo4.png" alt="Gallery Photo 4">
-
-        <img src="photo5.png" alt="Gallery Photo 5">
-
-        <img src="photo6.png" alt="Gallery Photo 6">
-
-        <img src="photo7.png" alt="Gallery Photo 7">
-
-        <img src="photo8.png" alt="Gallery Photo 8">
+        </a>
 
     </div>
 
 </section>
 
 
-<!-- CONTACT -->
 
-<section class="contact" id="contact">
+<!-- =====================================================
+     VIDEO
+===================================================== -->
 
-<h2>Contact Us</h2>
+<section id="video">
 
-<br>
+    <h2 class="title">
+        Our Video
+    </h2>
 
-<h3>AD Foundation Study Classes</h3>
+    <div class="video-box">
 
-<p>Founder : Mrs. Rakhi Luthra</p>
+        <video
+        controls
+        autoplay
+        muted
+        loop>
 
-<p>Address : Sector 92, Block A-17</p>
+            <source
+            src="intro.mp4"
+            type="video/mp4">
 
-<p>Email : adfoundation@gmail.com</p>
+            Your browser does not support video.
 
-<p>Free Education For Everyone</p>
+        </video>
 
-</section>
-
-
-<!-- APPLY FORM -->
-
-<section class="apply-section" id="apply">
-
-<h2>Apply for Free Classes</h2>
-
-<p>Fill the form below to join AD Foundation free classes.</p>
-
-<form class="apply-form">
-
-<input
-type="text"
-placeholder="Full Name"
-required
->
-
-<input
-type="tel"
-placeholder="Mobile Number"
-required
->
-
-<input
-type="email"
-placeholder="Email Address"
-required
->
-
-<input
-type="text"
-placeholder="Class / Qualification"
-required
->
-
-<select required>
-
-<option value="">Select Course</option>
-
-<option>Graphic Design</option>
-
-<option>Computer Class</option>
-
-<option>English Class</option>
-
-<option>Science Class</option>
-
-<option>AI Class</option>
-
-</select>
-
-<textarea
-placeholder="Why do you want to join?"
-rows="4">
-</textarea>
-
-<button class="apply-btn" type="submit">
-
-Submit Application
-
-</button>
-
-</form>
+    </div>
 
 </section>
 
 
-<!-- FOOTER -->
+
+<!-- =====================================================
+     ABOUT US
+===================================================== -->
+
+<section id="about">
+
+    <h2 class="title">
+        About Us
+    </h2>
+
+
+    <div class="about">
+
+
+        <!-- FOUNDER PHOTO -->
+
+        <img
+        src="founder.png"
+        alt="Mrs. Rakhi Luthra - Founder">
+
+
+        <div class="about-text">
+
+            <h3>
+                Free Education NGO
+            </h3>
+
+            <br>
+
+            <p>
+
+                AD Foundation Study Classes is a free
+                educational NGO dedicated to helping
+                children and youth achieve academic success.
+
+                We provide quality education, computer skills,
+                English communication, AI learning and
+                personality development.
+
+            </p>
+
+            <br>
+
+            <p>
+                <b>Founder:</b>
+                Mrs. Rakhi Luthra
+            </p>
+
+            <p>
+                <b>Address:</b>
+                Sector 92, Block A-17
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     COURSES
+===================================================== -->
+
+<section id="courses">
+
+    <h2 class="title">
+        Our Free Courses
+    </h2>
+
+
+    <div class="cards">
+
+
+        <!-- COMPUTER -->
+
+        <div class="card">
+
+            <h3>
+                💻 Computer
+            </h3>
+
+            <img
+            src="Computer.png"
+            alt="Computer Class">
+
+            <p>
+                Basic Computer, MS Office & Internet
+            </p>
+
+        </div>
+
+
+        <!-- MATHEMATICS -->
+
+        <div class="card">
+
+            <h3>
+                📐 Mathematics
+            </h3>
+
+            <img
+            src="Mathematics.png"
+            alt="Mathematics Class">
+
+            <p>
+                Basic to Advanced Mathematics
+            </p>
+
+        </div>
+
+
+        <!-- SCIENCE -->
+
+        <div class="card">
+
+            <h3>
+                🔬 Science
+            </h3>
+
+            <img
+            src="Science.png"
+            alt="Science Class">
+
+            <p>
+                Physics, Chemistry & Biology
+            </p>
+
+        </div>
+
+
+        <!-- ENGLISH -->
+
+        <div class="card">
+
+            <h3>
+                🇬🇧 English
+            </h3>
+
+            <img
+            src="English.png"
+            alt="English Class">
+
+            <p>
+                Grammar, Speaking & Communication Skills
+            </p>
+
+        </div>
+
+
+        <!-- GRAPHIC DESIGN -->
+
+        <div class="card">
+
+            <h3>
+                🎨 Graphic Design
+            </h3>
+
+            <img
+            src="Graphic Design.png"
+            alt="Graphic Design Class">
+
+            <p>
+                Canva, Photoshop & Creative Designing
+            </p>
+
+        </div>
+
+
+        <!-- AI -->
+
+        <div class="card">
+
+            <h3>
+                🤖 Artificial Intelligence
+            </h3>
+
+            <img
+            src="Artificial Intelligence.png"
+            alt="AI Class">
+
+            <p>
+                AI Basics, ChatGPT & Future Technologies
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ACTIVITIES
+===================================================== -->
+
+<section id="activities">
+
+    <h2 class="title">
+        Our Activities
+    </h2>
+
+
+    <div class="cards">
+
+
+        <div class="card activity-card">
+
+            <div class="activity-icon">
+                🎂
+            </div>
+
+            <h3>
+                Birthday Celebrations
+            </h3>
+
+        </div>
+
+
+        <div class="card activity-card">
+
+            <div class="activity-icon">
+                🎬
+            </div>
+
+            <h3>
+                Educational Movies
+            </h3>
+
+        </div>
+
+
+        <div class="card activity-card">
+
+            <div class="activity-icon">
+                🏆
+            </div>
+
+            <h3>
+                Student Competitions
+            </h3>
+
+        </div>
+
+
+        <div class="card activity-card">
+
+            <div class="activity-icon">
+                🎉
+            </div>
+
+            <h3>
+                Cultural Programs
+            </h3>
+
+        </div>
+
+
+        <div class="card activity-card">
+
+            <div class="activity-icon">
+                📚
+            </div>
+
+            <h3>
+                Knowledge Sessions
+            </h3>
+
+        </div>
+
+
+        <div class="card activity-card">
+
+            <div class="activity-icon">
+                💡
+            </div>
+
+            <h3>
+                Skill Development Workshops
+            </h3>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     IN MEMORY OF ABHAY LUTRA JI
+===================================================== -->
+
+<section
+id="memory"
+class="memory-section">
+
+
+    <h2 class="title">
+        In Loving Memory
+    </h2>
+
+
+    <div class="memory-card">
+
+
+        <div class="memory-icon">
+            🕊️
+        </div>
+
+
+        <h2>
+            In Memory of Abhay Lutra Ji
+        </h2>
+
+
+        <div
+        class="story"
+        id="story">
+
+
+            <p>
+
+                Abhay Lutra Ji was a loving son and a
+                very special person to his family.
+                He shared a deep and beautiful bond
+                with his mother.
+
+                He was suffering from cancer in his leg,
+                and sadly, because of his illness,
+                he passed away.
+
+            </p>
+
+
+            <p>
+
+                His loss was a very painful moment
+                for his family and everyone who knew him.
+
+                Although Abhay Lutra Ji is no longer
+                with us, his memories will always remain
+                close to the hearts of his loved ones.
+
+            </p>
+
+
+            <p>
+
+                In his loving memory, Meri Foundation
+                was started as a free initiative to help
+                people and serve the community.
+
+                This foundation is a small effort to keep
+                his memory alive and to give his life a
+                meaningful and lasting tribute.
+
+            </p>
+
+
+            <p>
+
+                Abhay Lutra Ji will always be remembered
+                with love, respect, and heartfelt tribute.
+
+            </p>
+
+
+        </div>
+
+
+        <div class="memory-quote">
+
+            🕊️ Forever remembered with love,
+            respect and gratitude. 🕊️
+
+        </div>
+
+
+        <!-- SPEECH BUTTONS -->
+
+        <div class="buttons">
+
+
+            <button
+            class="memory-btn"
+            onclick="speakStory()">
+
+                🔊 Listen
+
+            </button>
+
+
+            <button
+            class="memory-btn"
+            onclick="pauseResume()">
+
+                ⏸ Pause / Resume
+
+            </button>
+
+
+            <button
+            class="memory-btn"
+            onclick="stopStory()">
+
+                ⏹ Stop
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     GALLERY
+===================================================== -->
+
+<section id="gallery">
+
+    <h2 class="title">
+        Gallery
+    </h2>
+
+
+    <div class="gallery">
+
+
+        <img
+        src="photo1.png"
+        alt="Gallery Photo 1">
+
+
+        <img
+        src="photo2.png"
+        alt="Gallery Photo 2">
+
+
+        <img
+        src="photo3.png"
+        alt="Gallery Photo 3">
+
+
+        <img
+        src="photo4.png"
+        alt="Gallery Photo 4">
+
+
+        <img
+        src="photo5.png"
+        alt="Gallery Photo 5">
+
+
+        <img
+        src="photo6.png"
+        alt="Gallery Photo 6">
+
+
+        <img
+        src="photo7.png"
+        alt="Gallery Photo 7">
+
+
+        <img
+        src="photo8.png"
+        alt="Gallery Photo 8">
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section
+class="contact"
+id="contact">
+
+
+    <h2>
+        Contact Us
+    </h2>
+
+    <br>
+
+
+    <h3>
+        AD Foundation Study Classes
+    </h3>
+
+
+    <p>
+        Founder : Mrs. Rakhi Luthra
+    </p>
+
+
+    <p>
+        Address : Sector 92, Block A-17
+    </p>
+
+
+    <p>
+        Email : adfoundation@gmail.com
+    </p>
+
+
+    <p>
+        Free Education For Everyone
+    </p>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     APPLY FORM
+===================================================== -->
+
+<section
+class="apply-section"
+id="apply">
+
+
+    <h2>
+        Apply for Free Classes
+    </h2>
+
+
+    <p>
+        Fill the form below to join
+        AD Foundation free classes.
+    </p>
+
+
+    <form
+    class="apply-form"
+    onsubmit="submitApplication(event)">
+
+
+        <input
+        type="text"
+        placeholder="Full Name"
+        required>
+
+
+        <input
+        type="tel"
+        placeholder="Mobile Number"
+        required>
+
+
+        <input
+        type="email"
+        placeholder="Email Address"
+        required>
+
+
+        <input
+        type="text"
+        placeholder="Class / Qualification"
+        required>
+
+
+        <select required>
+
+            <option value="">
+                Select Course
+            </option>
+
+            <option>
+                Graphic Design
+            </option>
+
+            <option>
+                Computer Class
+            </option>
+
+            <option>
+                English Class
+            </option>
+
+            <option>
+                Science Class
+            </option>
+
+            <option>
+                Mathematics Class
+            </option>
+
+            <option>
+                AI Class
+            </option>
+
+        </select>
+
+
+        <textarea
+        placeholder="Why do you want to join?"
+        rows="4"></textarea>
+
+
+        <button
+        class="apply-btn"
+        type="submit">
+
+            Submit Application
+
+        </button>
+
+
+    </form>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
-© 2026 AD Foundation Study Classes | Learn • Grow • Succeed
+    © 2026 AD Foundation Study Classes
+    | Learn • Grow • Succeed
 
 </footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+/* =========================
+   MEMORY STORY SPEECH
+========================= */
+
+let speech = null;
+
+
+function speakStory(){
+
+    speechSynthesis.cancel();
+
+    const text =
+        document.getElementById("story").innerText;
+
+    speech =
+        new SpeechSynthesisUtterance(text);
+
+    speech.lang = "en-IN";
+
+    speech.rate = 0.9;
+
+    speech.pitch = 1;
+
+    speech.volume = 1;
+
+    speechSynthesis.speak(speech);
+
+}
+
+
+function pauseResume(){
+
+    if(speechSynthesis.speaking){
+
+        if(speechSynthesis.paused){
+
+            speechSynthesis.resume();
+
+        }else{
+
+            speechSynthesis.pause();
+
+        }
+
+    }
+
+}
+
+
+function stopStory(){
+
+    speechSynthesis.cancel();
+
+}
+
+
+
+/* =========================
+   APPLY FORM
+========================= */
+
+function submitApplication(event){
+
+    event.preventDefault();
+
+    alert(
+        "Thank you for applying to AD Foundation Study Classes!"
+    );
+
+}
+
+</script>
+
 
 </body>
 </html>
