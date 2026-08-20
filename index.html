@@ -203,6 +203,7 @@ section{
 
 .card:hover{
     transform:translateY(-10px);
+
     box-shadow:
     0 15px 30px rgba(0,0,0,.18);
 }
@@ -300,6 +301,10 @@ section{
     font-weight:bold;
 }
 
+/* =========================
+   SPEECH BUTTONS
+========================= */
+
 .buttons{
     display:flex;
     justify-content:center;
@@ -314,9 +319,12 @@ section{
     border-radius:10px;
     font-size:16px;
     cursor:pointer;
+
     background:#003f88;
     color:white;
+
     font-weight:bold;
+
     transition:.3s;
 }
 
@@ -449,6 +457,21 @@ section{
 }
 
 /* =========================
+   SUCCESS MESSAGE
+========================= */
+
+.success-message{
+    display:none;
+    margin-top:20px;
+    padding:15px;
+    background:#e8f7ee;
+    color:#187a3d;
+    border-radius:10px;
+    text-align:center;
+    font-weight:bold;
+}
+
+/* =========================
    FOOTER
 ========================= */
 
@@ -535,9 +558,7 @@ footer{
 </style>
 </head>
 
-
 <body>
-
 
 <!-- =====================================================
      NAVIGATION
@@ -555,29 +576,20 @@ footer{
 
     </div>
 
-
     <div>
 
         <a href="#home">Home</a>
-
         <a href="#about">About</a>
-
         <a href="#courses">Courses</a>
-
         <a href="#activities">Activities</a>
-
         <a href="#memory">In Memory</a>
-
         <a href="#gallery">Gallery</a>
-
         <a href="#contact">Contact</a>
-
         <a href="#apply">Apply</a>
 
     </div>
 
 </nav>
-
 
 
 <!-- =====================================================
@@ -607,7 +619,6 @@ footer{
     </div>
 
 </section>
-
 
 
 <!-- =====================================================
@@ -641,7 +652,6 @@ footer{
 </section>
 
 
-
 <!-- =====================================================
      ABOUT US
 ===================================================== -->
@@ -652,16 +662,11 @@ footer{
         About Us
     </h2>
 
-
     <div class="about">
-
-
-        <!-- FOUNDER PHOTO -->
 
         <img
         src="founder.png"
         alt="Mrs. Rakhi Luthra - Founder">
-
 
         <div class="about-text">
 
@@ -702,7 +707,6 @@ footer{
 </section>
 
 
-
 <!-- =====================================================
      COURSES
 ===================================================== -->
@@ -713,11 +717,7 @@ footer{
         Our Free Courses
     </h2>
 
-
     <div class="cards">
-
-
-        <!-- COMPUTER -->
 
         <div class="card">
 
@@ -736,8 +736,6 @@ footer{
         </div>
 
 
-        <!-- MATHEMATICS -->
-
         <div class="card">
 
             <h3>
@@ -754,8 +752,6 @@ footer{
 
         </div>
 
-
-        <!-- SCIENCE -->
 
         <div class="card">
 
@@ -774,8 +770,6 @@ footer{
         </div>
 
 
-        <!-- ENGLISH -->
-
         <div class="card">
 
             <h3>
@@ -792,8 +786,6 @@ footer{
 
         </div>
 
-
-        <!-- GRAPHIC DESIGN -->
 
         <div class="card">
 
@@ -812,8 +804,6 @@ footer{
         </div>
 
 
-        <!-- AI -->
-
         <div class="card">
 
             <h3>
@@ -830,11 +820,9 @@ footer{
 
         </div>
 
-
     </div>
 
 </section>
-
 
 
 <!-- =====================================================
@@ -847,9 +835,7 @@ footer{
         Our Activities
     </h2>
 
-
     <div class="cards">
-
 
         <div class="card activity-card">
 
@@ -928,11 +914,9 @@ footer{
 
         </div>
 
-
     </div>
 
 </section>
-
 
 
 <!-- =====================================================
@@ -943,29 +927,23 @@ footer{
 id="memory"
 class="memory-section">
 
-
     <h2 class="title">
         In Loving Memory
     </h2>
 
-
     <div class="memory-card">
-
 
         <div class="memory-icon">
             🕊️
         </div>
 
-
         <h2>
             In Memory of Abhay Lutra Ji
         </h2>
 
-
         <div
         class="story"
         id="story">
-
 
             <p>
 
@@ -1013,7 +991,6 @@ class="memory-section">
 
             </p>
 
-
         </div>
 
 
@@ -1025,10 +1002,7 @@ class="memory-section">
         </div>
 
 
-        <!-- SPEECH BUTTONS -->
-
         <div class="buttons">
-
 
             <button
             class="memory-btn"
@@ -1056,14 +1030,11 @@ class="memory-section">
 
             </button>
 
-
         </div>
-
 
     </div>
 
 </section>
-
 
 
 <!-- =====================================================
@@ -1076,54 +1047,43 @@ class="memory-section">
         Gallery
     </h2>
 
-
     <div class="gallery">
-
 
         <img
         src="photo1.png"
         alt="Gallery Photo 1">
 
-
         <img
         src="photo2.png"
         alt="Gallery Photo 2">
-
 
         <img
         src="photo3.png"
         alt="Gallery Photo 3">
 
-
         <img
         src="photo4.png"
         alt="Gallery Photo 4">
-
 
         <img
         src="photo5.png"
         alt="Gallery Photo 5">
 
-
         <img
         src="photo6.png"
         alt="Gallery Photo 6">
-
 
         <img
         src="photo7.png"
         alt="Gallery Photo 7">
 
-
         <img
         src="photo8.png"
         alt="Gallery Photo 8">
 
-
     </div>
 
 </section>
-
 
 
 <!-- =====================================================
@@ -1134,41 +1094,33 @@ class="memory-section">
 class="contact"
 id="contact">
 
-
     <h2>
         Contact Us
     </h2>
 
     <br>
 
-
     <h3>
         AD Foundation Study Classes
     </h3>
-
 
     <p>
         Founder : Mrs. Rakhi Luthra
     </p>
 
-
     <p>
         Address : Sector 92, Block A-17
     </p>
-
 
     <p>
         Email : adfoundation@gmail.com
     </p>
 
-
     <p>
         Free Education For Everyone
     </p>
 
-
 </section>
-
 
 
 <!-- =====================================================
@@ -1179,48 +1131,51 @@ id="contact">
 class="apply-section"
 id="apply">
 
-
     <h2>
         Apply for Free Classes
     </h2>
-
 
     <p>
         Fill the form below to join
         AD Foundation free classes.
     </p>
 
-
     <form
     class="apply-form"
+    id="applyForm"
     onsubmit="submitApplication(event)">
 
-
         <input
+        id="fullName"
         type="text"
         placeholder="Full Name"
         required>
 
 
         <input
+        id="mobile"
         type="tel"
         placeholder="Mobile Number"
         required>
 
 
         <input
+        id="email"
         type="email"
         placeholder="Email Address"
         required>
 
 
         <input
+        id="qualification"
         type="text"
         placeholder="Class / Qualification"
         required>
 
 
-        <select required>
+        <select
+        id="course"
+        required>
 
             <option value="">
                 Select Course
@@ -1254,6 +1209,7 @@ id="apply">
 
 
         <textarea
+        id="reason"
         placeholder="Why do you want to join?"
         rows="4"></textarea>
 
@@ -1267,10 +1223,17 @@ id="apply">
         </button>
 
 
+        <div
+        class="success-message"
+        id="successMessage">
+
+            ✅ Your application has been submitted successfully!
+
+        </div>
+
     </form>
 
 </section>
-
 
 
 <!-- =====================================================
@@ -1285,29 +1248,69 @@ id="apply">
 </footer>
 
 
-
 <!-- =====================================================
      JAVASCRIPT
 ===================================================== -->
 
 <script>
 
-/* =========================
+/* =====================================================
    MEMORY STORY SPEECH
-========================= */
+===================================================== */
 
 let speech = null;
 
 
+/* =========================
+   SPEAK STORY
+========================= */
+
 function speakStory(){
 
+    /* पहले से चल रही speech बंद करें */
     speechSynthesis.cancel();
 
+    const storyElement =
+        document.getElementById("story");
+
     const text =
-        document.getElementById("story").innerText;
+        storyElement.innerText.trim();
+
+
+    if(!text){
+        return;
+    }
+
 
     speech =
         new SpeechSynthesisUtterance(text);
+
+
+    /*
+       Indian English voice
+       Browser में उपलब्ध हो तो
+       Indian English voice चुनने की कोशिश
+    */
+
+    const voices =
+        speechSynthesis.getVoices();
+
+
+    const indianVoice =
+        voices.find(function(voice){
+
+            return voice.lang === "en-IN";
+
+        });
+
+
+    if(indianVoice){
+
+        speech.voice =
+            indianVoice;
+
+    }
+
 
     speech.lang = "en-IN";
 
@@ -1317,54 +1320,178 @@ function speakStory(){
 
     speech.volume = 1;
 
+
     speechSynthesis.speak(speech);
 
 }
 
 
+/* =========================
+   PAUSE / RESUME
+========================= */
+
 function pauseResume(){
 
-    if(speechSynthesis.speaking){
+    if(!speechSynthesis.speaking){
+        return;
+    }
 
-        if(speechSynthesis.paused){
 
-            speechSynthesis.resume();
+    if(speechSynthesis.paused){
 
-        }else{
+        speechSynthesis.resume();
 
-            speechSynthesis.pause();
+    }else{
 
-        }
+        speechSynthesis.pause();
 
     }
 
 }
 
 
+/* =========================
+   STOP SPEECH
+========================= */
+
 function stopStory(){
 
     speechSynthesis.cancel();
 
+    speech = null;
+
 }
 
 
+/* =====================================================
+   LOAD BROWSER VOICES
+===================================================== */
 
-/* =========================
+function loadVoices(){
+
+    speechSynthesis.getVoices();
+
+}
+
+
+loadVoices();
+
+
+if(
+    speechSynthesis.onvoiceschanged !== undefined
+){
+
+    speechSynthesis.onvoiceschanged =
+        loadVoices;
+
+}
+
+
+/* =====================================================
    APPLY FORM
-========================= */
+===================================================== */
 
 function submitApplication(event){
 
     event.preventDefault();
 
-    alert(
-        "Thank you for applying to AD Foundation Study Classes!"
-    );
+
+    const name =
+        document.getElementById("fullName").value.trim();
+
+    const mobile =
+        document.getElementById("mobile").value.trim();
+
+    const email =
+        document.getElementById("email").value.trim();
+
+    const qualification =
+        document.getElementById("qualification").value.trim();
+
+    const course =
+        document.getElementById("course").value;
+
+    const reason =
+        document.getElementById("reason").value.trim();
+
+
+    if(
+        !name ||
+        !mobile ||
+        !email ||
+        !qualification ||
+        !course
+    ){
+
+        alert(
+            "Please fill all required fields."
+        );
+
+        return;
+
+    }
+
+
+    /*
+       फिलहाल form browser में
+       success message दिखाता है।
+
+       Real database/email submission
+       के लिए backend या form service
+       जोड़ना होगा।
+    */
+
+
+    document
+    .getElementById("successMessage")
+    .style.display = "block";
+
+
+    console.log({
+
+        name:name,
+
+        mobile:mobile,
+
+        email:email,
+
+        qualification:qualification,
+
+        course:course,
+
+        reason:reason
+
+    });
+
+
+    document
+    .getElementById("applyForm")
+    .reset();
 
 }
 
-</script>
 
+/* =====================================================
+   CLOSE SUCCESS MESSAGE AFTER TIME
+===================================================== */
+
+setTimeout(function(){
+
+    const message =
+        document.getElementById(
+            "successMessage"
+        );
+
+    if(message){
+
+        message.style.display =
+            "none";
+
+    }
+
+},5000);
+
+</script>
 
 </body>
 </html>
