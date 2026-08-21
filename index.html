@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>AD Foundation Study Classes</title>
 
@@ -225,6 +229,65 @@ section{
 }
 
 /* =========================
+   TEACHERS
+========================= */
+
+#teachers{
+    background:
+    linear-gradient(
+        135deg,
+        #eef7ff,
+        #ffffff
+    );
+}
+
+.teacher-card{
+    position:relative;
+    overflow:hidden;
+}
+
+.teacher-card img{
+    width:170px;
+    height:170px;
+    object-fit:cover;
+    border-radius:50%;
+    margin:10px auto 20px;
+    display:block;
+
+    border:5px solid #e5f2ff;
+
+    box-shadow:
+    0 8px 20px rgba(0,63,136,.18);
+}
+
+.teacher-subject{
+    display:inline-block;
+    background:#003f88;
+    color:white;
+    padding:7px 16px;
+    border-radius:30px;
+    margin:10px 0 15px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.teacher-card h3{
+    font-size:21px;
+    margin-bottom:5px;
+}
+
+.teacher-card .qualification{
+    color:#555;
+    font-weight:bold;
+    margin-bottom:8px;
+}
+
+.teacher-card .experience{
+    color:#003f88;
+    font-size:14px;
+}
+
+/* =========================
    ACTIVITIES
 ========================= */
 
@@ -291,14 +354,22 @@ section{
 
     0%,100%{
         transform:scale(1);
+
         filter:
-        drop-shadow(0 5px 12px rgba(255,180,40,.25));
+        drop-shadow(
+            0 5px 12px
+            rgba(255,180,40,.25)
+        );
     }
 
     50%{
         transform:scale(1.04);
+
         filter:
-        drop-shadow(0 5px 28px rgba(255,180,40,.60));
+        drop-shadow(
+            0 5px 28px
+            rgba(255,180,40,.60)
+        );
     }
 
 }
@@ -573,6 +644,11 @@ footer{
         height:300px;
     }
 
+    .teacher-card img{
+        width:150px;
+        height:150px;
+    }
+
     .memory-card{
         padding:30px 20px;
     }
@@ -619,9 +695,11 @@ footer{
 }
 
 </style>
+
 </head>
 
 <body>
+
 
 <!-- =====================================================
      NAVIGATION
@@ -642,12 +720,21 @@ footer{
     <div>
 
         <a href="#home">Home</a>
+
         <a href="#about">About</a>
+
         <a href="#courses">Courses</a>
+
+        <a href="#teachers">Teachers</a>
+
         <a href="#activities">Activities</a>
+
         <a href="#memory">In Memory</a>
+
         <a href="#gallery">Gallery</a>
+
         <a href="#contact">Contact</a>
+
         <a href="#apply">Apply</a>
 
     </div>
@@ -659,7 +746,9 @@ footer{
      HERO
 ===================================================== -->
 
-<section class="hero" id="home">
+<section
+class="hero"
+id="home">
 
     <div>
 
@@ -754,13 +843,17 @@ footer{
             <br>
 
             <p>
+
                 <b>Founder:</b>
                 Mrs. Rakhi Luthra
+
             </p>
 
             <p>
+
                 <b>Address:</b>
                 Sector 92, Block A-17
+
             </p>
 
         </div>
@@ -782,6 +875,9 @@ footer{
 
     <div class="cards">
 
+
+        <!-- COMPUTER -->
+
         <div class="card">
 
             <h3>
@@ -798,6 +894,8 @@ footer{
 
         </div>
 
+
+        <!-- MATHEMATICS -->
 
         <div class="card">
 
@@ -816,6 +914,8 @@ footer{
         </div>
 
 
+        <!-- SCIENCE -->
+
         <div class="card">
 
             <h3>
@@ -832,6 +932,8 @@ footer{
 
         </div>
 
+
+        <!-- ENGLISH -->
 
         <div class="card">
 
@@ -850,6 +952,8 @@ footer{
         </div>
 
 
+        <!-- GRAPHIC DESIGN -->
+
         <div class="card">
 
             <h3>
@@ -866,6 +970,8 @@ footer{
 
         </div>
 
+
+        <!-- AI -->
 
         <div class="card">
 
@@ -889,6 +995,222 @@ footer{
 
 
 <!-- =====================================================
+     TEACHERS
+===================================================== -->
+
+<section
+id="teachers">
+
+    <h2 class="title">
+        👨‍🏫 Our Teachers
+    </h2>
+
+    <div class="cards">
+
+
+        <!-- =================================================
+             1. COMPUTER TEACHER
+        ================================================== -->
+
+        <div class="card teacher-card">
+
+            <img
+            src="computer-teacher.png"
+            alt="Computer Teacher">
+
+            <h3>
+                Mr. Rohit Sharma
+            </h3>
+
+            <span class="teacher-subject">
+                💻 Computer Teacher
+            </span>
+
+            <p class="qualification">
+                BCA, MCA
+            </p>
+
+            <p>
+                Basic Computer, MS Office & Internet
+            </p>
+
+            <p class="experience">
+                ⭐ Experienced Teacher
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             2. MATHEMATICS TEACHER
+        ================================================== -->
+
+        <div class="card teacher-card">
+
+            <img
+            src="mathematics-teacher.png"
+            alt="Mathematics Teacher">
+
+            <h3>
+                Ms. Neha Gupta
+            </h3>
+
+            <span class="teacher-subject">
+                📐 Mathematics Teacher
+            </span>
+
+            <p class="qualification">
+                M.Sc. Mathematics
+            </p>
+
+            <p>
+                Basic to Advanced Mathematics
+            </p>
+
+            <p class="experience">
+                ⭐ Experienced Teacher
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             3. SCIENCE TEACHER
+        ================================================== -->
+
+        <div class="card teacher-card">
+
+            <img
+            src="science-teacher.png"
+            alt="Science Teacher">
+
+            <h3>
+                Mr. Amit Verma
+            </h3>
+
+            <span class="teacher-subject">
+                🔬 Science Teacher
+            </span>
+
+            <p class="qualification">
+                M.Sc. Physics
+            </p>
+
+            <p>
+                Physics, Chemistry & Biology
+            </p>
+
+            <p class="experience">
+                ⭐ Experienced Teacher
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             4. ENGLISH TEACHER
+        ================================================== -->
+
+        <div class="card teacher-card">
+
+            <img
+            src="english-teacher.png"
+            alt="English Teacher">
+
+            <h3>
+                Ms. Priya Arora
+            </h3>
+
+            <span class="teacher-subject">
+                🇬🇧 English Teacher
+            </span>
+
+            <p class="qualification">
+                MA English
+            </p>
+
+            <p>
+                Grammar, Speaking & Communication
+            </p>
+
+            <p class="experience">
+                ⭐ Experienced Teacher
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             5. GRAPHIC DESIGN TEACHER
+        ================================================== -->
+
+        <div class="card teacher-card">
+
+            <img
+            src="graphic-design-teacher.png"
+            alt="Graphic Design Teacher">
+
+            <h3>
+                Mr. Karan Malhotra
+            </h3>
+
+            <span class="teacher-subject">
+                🎨 Graphic Design Teacher
+            </span>
+
+            <p class="qualification">
+                B.Des Graphic Design
+            </p>
+
+            <p>
+                Canva, Photoshop & Creative Designing
+            </p>
+
+            <p class="experience">
+                ⭐ Experienced Teacher
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             6. AI TEACHER
+        ================================================== -->
+
+        <div class="card teacher-card">
+
+            <img
+            src="ai-teacher.png"
+            alt="Artificial Intelligence Teacher">
+
+            <h3>
+                Ms. Anjali Mehta
+            </h3>
+
+            <span class="teacher-subject">
+                🤖 AI Teacher
+            </span>
+
+            <p class="qualification">
+                M.Tech AI & ML
+            </p>
+
+            <p>
+                AI Basics, ChatGPT & Future Technologies
+            </p>
+
+            <p class="experience">
+                ⭐ Experienced Teacher
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
      ACTIVITIES
 ===================================================== -->
 
@@ -899,6 +1221,7 @@ footer{
     </h2>
 
     <div class="cards">
+
 
         <div class="card activity-card">
 
@@ -996,7 +1319,6 @@ class="memory-section">
 
     <div class="memory-card">
 
-        <!-- CANDLE PHOTO ADDED HERE -->
         <div class="memory-icon">
 
             <img
@@ -1216,6 +1538,7 @@ id="apply">
     id="applyForm"
     onsubmit="submitApplication(event)">
 
+
         <input
         id="fullName"
         type="text"
@@ -1335,15 +1658,18 @@ function speakStory(){
 
     stopStory();
 
-    const storyElement = document.getElementById("story");
+    const storyElement =
+        document.getElementById("story");
 
     if(!storyElement){
         return;
     }
 
-    const text = storyElement.innerText;
+    const text =
+        storyElement.innerText;
 
-    speech = new SpeechSynthesisUtterance(text);
+    speech =
+        new SpeechSynthesisUtterance(text);
 
     speech.rate = 0.9;
     speech.pitch = 1;
@@ -1383,6 +1709,7 @@ function pauseResume(){
 function stopStory(){
 
     window.speechSynthesis.cancel();
+
     speech = null;
 
 }
@@ -1396,23 +1723,47 @@ function submitApplication(event){
 
     event.preventDefault();
 
+
     const fullName =
-        document.getElementById("fullName").value.trim();
+        document
+        .getElementById("fullName")
+        .value
+        .trim();
+
 
     const mobile =
-        document.getElementById("mobile").value.trim();
+        document
+        .getElementById("mobile")
+        .value
+        .trim();
+
 
     const email =
-        document.getElementById("email").value.trim();
+        document
+        .getElementById("email")
+        .value
+        .trim();
+
 
     const qualification =
-        document.getElementById("qualification").value.trim();
+        document
+        .getElementById("qualification")
+        .value
+        .trim();
+
 
     const course =
-        document.getElementById("course").value;
+        document
+        .getElementById("course")
+        .value;
+
 
     const reason =
-        document.getElementById("reason").value.trim();
+        document
+        .getElementById("reason")
+        .value
+        .trim();
+
 
     if(
         !fullName ||
@@ -1422,7 +1773,9 @@ function submitApplication(event){
         !course
     ){
 
-        alert("Please fill all required fields.");
+        alert(
+            "Please fill all required fields."
+        );
 
         return;
 
@@ -1432,12 +1785,19 @@ function submitApplication(event){
     const application = {
 
         fullName:fullName,
+
         mobile:mobile,
+
         email:email,
+
         qualification:qualification,
+
         course:course,
+
         reason:reason,
-        submittedAt:new Date().toLocaleString()
+
+        submittedAt:
+        new Date().toLocaleString()
 
     };
 
@@ -1470,7 +1830,7 @@ function submitApplication(event){
 
 
 /* =====================================================
-   CLEAN UP SPEECH WHEN PAGE IS CLOSED
+   CLEAN UP SPEECH
 ===================================================== */
 
 window.addEventListener(
@@ -1485,4 +1845,5 @@ window.addEventListener(
 </script>
 
 </body>
+
 </html>
