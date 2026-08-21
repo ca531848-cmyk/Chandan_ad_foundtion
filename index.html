@@ -265,10 +265,42 @@ section{
     border-top:5px solid #003f88;
 }
 
+/* =========================
+   MEMORIAL CANDLE PHOTO
+========================= */
+
 .memory-icon{
-    text-align:center;
-    font-size:50px;
-    margin-bottom:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.memory-icon img{
+    width:190px;
+    height:160px;
+    object-fit:contain;
+
+    filter:
+    drop-shadow(0 5px 12px rgba(255,180,40,.25));
+
+    animation:candleGlow 2.8s ease-in-out infinite;
+}
+
+@keyframes candleGlow{
+
+    0%,100%{
+        transform:scale(1);
+        filter:
+        drop-shadow(0 5px 12px rgba(255,180,40,.25));
+    }
+
+    50%{
+        transform:scale(1.04);
+        filter:
+        drop-shadow(0 5px 28px rgba(255,180,40,.60));
+    }
+
 }
 
 .memory-card h2{
@@ -551,6 +583,37 @@ footer{
 
     .story{
         font-size:16px;
+    }
+
+    .memory-icon img{
+        width:150px;
+        height:125px;
+    }
+
+}
+
+/* =========================
+   EXTRA SMALL MOBILE
+========================= */
+
+@media(max-width:400px){
+
+    .memory-card{
+        padding:25px 16px;
+    }
+
+    .memory-card h2{
+        font-size:25px;
+    }
+
+    .story{
+        font-size:15px;
+        line-height:1.8;
+    }
+
+    .memory-icon img{
+        width:135px;
+        height:115px;
     }
 
 }
@@ -933,13 +996,20 @@ class="memory-section">
 
     <div class="memory-card">
 
+        <!-- CANDLE PHOTO ADDED HERE -->
         <div class="memory-icon">
-            🕊️
+
+            <img
+            src="memory-candle.png"
+            alt="Memorial Candle">
+
         </div>
+
 
         <h2>
             In Memory of Abhay Lutra Ji
         </h2>
+
 
         <div
         class="story"
@@ -996,8 +1066,8 @@ class="memory-section">
 
         <div class="memory-quote">
 
-            🕊️ Forever remembered with love,
-            respect and gratitude. 🕊️
+            🕯️ Forever remembered with love,
+            respect and gratitude. 🕯️
 
         </div>
 
@@ -1140,6 +1210,7 @@ id="apply">
         AD Foundation free classes.
     </p>
 
+
     <form
     class="apply-form"
     id="applyForm"
@@ -1260,129 +1331,59 @@ id="apply">
 
 let speech = null;
 
-
-/* =========================
-   SPEAK STORY
-========================= */
-
 function speakStory(){
 
-    /* पहले से चल रही speech बंद करें */
-    speechSynthesis.cancel();
+    stopStory();
 
-    const storyElement =
-        document.getElementById("story");
+    const storyElement = document.getElementById("story");
 
-    const text =
-        storyElement.innerText.trim();
-
-
-    if(!text){
+    if(!storyElement){
         return;
     }
 
+    const text = storyElement.innerText;
 
-    speech =
-        new SpeechSynthesisUtterance(text);
-
-
-    /*
-       Indian English voice
-       Browser में उपलब्ध हो तो
-       Indian English voice चुनने की कोशिश
-    */
-
-    const voices =
-        speechSynthesis.getVoices();
-
-
-    const indianVoice =
-        voices.find(function(voice){
-
-            return voice.lang === "en-IN";
-
-        });
-
-
-    if(indianVoice){
-
-        speech.voice =
-            indianVoice;
-
-    }
-
-
-    speech.lang = "en-IN";
+    speech = new SpeechSynthesisUtterance(text);
 
     speech.rate = 0.9;
-
     speech.pitch = 1;
-
     speech.volume = 1;
 
-
-    speechSynthesis.speak(speech);
-
+    window.speechSynthesis.speak(speech);
 }
 
 
-/* =========================
+/* =====================================================
    PAUSE / RESUME
-========================= */
+===================================================== */
 
 function pauseResume(){
 
-    if(!speechSynthesis.speaking){
-        return;
+    if(window.speechSynthesis.speaking){
+
+        if(window.speechSynthesis.paused){
+
+            window.speechSynthesis.resume();
+
+        }else{
+
+            window.speechSynthesis.pause();
+
+        }
+
     }
-
-
-    if(speechSynthesis.paused){
-
-        speechSynthesis.resume();
-
-    }else{
-
-        speechSynthesis.pause();
-
-    }
-
-}
-
-
-/* =========================
-   STOP SPEECH
-========================= */
-
-function stopStory(){
-
-    speechSynthesis.cancel();
-
-    speech = null;
 
 }
 
 
 /* =====================================================
-   LOAD BROWSER VOICES
+   STOP SPEECH
 ===================================================== */
 
-function loadVoices(){
+function stopStory(){
 
-    speechSynthesis.getVoices();
-
-}
-
-
-loadVoices();
-
-
-if(
-    speechSynthesis.onvoiceschanged !== undefined
-){
-
-    speechSynthesis.onvoiceschanged =
-        loadVoices;
+    window.speechSynthesis.cancel();
+    speech = null;
 
 }
 
@@ -1395,8 +1396,7 @@ function submitApplication(event){
 
     event.preventDefault();
 
-
-    const name =
+    const fullName =
         document.getElementById("fullName").value.trim();
 
     const mobile =
@@ -1414,82 +1414,73 @@ function submitApplication(event){
     const reason =
         document.getElementById("reason").value.trim();
 
-
     if(
-        !name ||
+        !fullName ||
         !mobile ||
         !email ||
         !qualification ||
         !course
     ){
 
-        alert(
-            "Please fill all required fields."
-        );
+        alert("Please fill all required fields.");
 
         return;
 
     }
 
 
-    /*
-       फिलहाल form browser में
-       success message दिखाता है।
+    const application = {
 
-       Real database/email submission
-       के लिए backend या form service
-       जोड़ना होगा।
-    */
+        fullName:fullName,
+        mobile:mobile,
+        email:email,
+        qualification:qualification,
+        course:course,
+        reason:reason,
+        submittedAt:new Date().toLocaleString()
+
+    };
+
+
+    console.log(
+        "Application:",
+        application
+    );
 
 
     document
     .getElementById("successMessage")
-    .style.display = "block";
-
-
-    console.log({
-
-        name:name,
-
-        mobile:mobile,
-
-        email:email,
-
-        qualification:qualification,
-
-        course:course,
-
-        reason:reason
-
-    });
+    .style.display="block";
 
 
     document
     .getElementById("applyForm")
     .reset();
 
+
+    setTimeout(function(){
+
+        document
+        .getElementById("successMessage")
+        .style.display="none";
+
+    },5000);
+
 }
 
 
 /* =====================================================
-   CLOSE SUCCESS MESSAGE AFTER TIME
+   CLEAN UP SPEECH WHEN PAGE IS CLOSED
 ===================================================== */
 
-setTimeout(function(){
+window.addEventListener(
+    "beforeunload",
+    function(){
 
-    const message =
-        document.getElementById(
-            "successMessage"
-        );
-
-    if(message){
-
-        message.style.display =
-            "none";
+        window.speechSynthesis.cancel();
 
     }
-
-},5000);
+);
 
 </script>
 
